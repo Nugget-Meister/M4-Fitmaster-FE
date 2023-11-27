@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
-import Button from 'react-bootstrap';
+import { Card, Button} from 'react-bootstrap';
 
-const ItemThumb = (clothing) => {
+const ItemThumb = ({clothing}) => {
+    console.log(clothing)
     return (
-       <Card>
+       <Card style={{width: '10rem'}}>
             <Card.Title>{clothing.name}</Card.Title>
             <Card.Img variant='top' src={clothing.imageurl}/>
             <Card.Body>
