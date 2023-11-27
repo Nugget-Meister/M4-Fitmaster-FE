@@ -1,4 +1,5 @@
 import React from 'react';
+import getSingl
 
 const Index = () => {
     return (
