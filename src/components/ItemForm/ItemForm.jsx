@@ -1,11 +1,33 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Form } from 'react-bootstrap';
 
-const ItemForm = () => {
 
-    const [item, setItem] = useState()
+const ItemForm = ({id}) => {
+    const template = {
+        name: '',
+        category: '',
+        heat: 0,
+        cold: 0,
+        material: '',
+        iscomfortable: false,
+        imageurl: ''
+    }
+
+    const [item, setItem] = useState(template)
     
-    
+    if(id) {
+        console.log(id);
+        useEffect(() => {
+            console.log(id)
+        }, [])
+    }
+    const handleTrueFalse = (e) => {}
+    const handleChange = (e) => {}
+    const handleSubmit = (e) => {
+        e.preventDetault()
+    }
+
     return (
         <div>
             
