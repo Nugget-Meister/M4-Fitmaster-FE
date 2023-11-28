@@ -11,7 +11,6 @@ const ItemThumb = ({clothing}) => {
                 src={clothing.imageurl}
                 style={{
                     width: '10rem', 
-                    height: '20rem',
                     overflow: 'hidden'
                 }}
                 />

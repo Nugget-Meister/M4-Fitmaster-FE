@@ -5,10 +5,12 @@ import NavBar from './components/common/NavBar'
 import Index from './components/Index/Index'
 import NewItem from './components/ItemForm/NewItem'
 import EditItem from './components/ItemForm/EditItem'
-import 
+import Show from './components/Show/Show'
+import Outfits from './components/Outfits/Outfits'
 
 import './index.css'
 import splashBG from './assets/clark-street-mercantile-P3pI6xzovu0-unsplash.jpg'
+// import Outfits from './components/Outfits/Outfits'
 
 
 function App() {
@@ -19,16 +21,23 @@ function App() {
     <>
       <Router>
         <main style={{
-          'backgroundImage': `url(${splashBG})`,
+          // 'backgroundImage': `url(${splashBG})`,
+          // 'background-size': 'contain',
+          // 'opacity': '0.4'
         }}>
+          <div id='bgimage' style= {{
+            'backgroundImage': `url(${splashBG})`,
+          }}
+          >
+            s
+          </div>
           <NavBar/>
           <Routes>
             <Route path='/' element={<Index/>}/>
-            <Route path='/clothes/edit' element={''}/>
             <Route path='/clothes/new' element={<NewItem/>}/>
-            <Route path='/clothes/:id' element={''}/>
-            <Route path='/clothes/:id/edit' element={''}/>
-            <Route path='/outfits/' element={''}/>
+            <Route path='/clothes/:id' element={<Show/>}/>
+            <Route path='/clothes/:id/edit' element={<EditItem/>}/>
+            <Route path='/outfits/' element={<Outfits/>}/>
           </Routes>
         </main>
       </Router>

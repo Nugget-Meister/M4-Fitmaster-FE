@@ -1,7 +1,8 @@
 import React from 'react';
 import { getClothes, getSingleClothing } from '../../helpers/apicalls';
 import { useState, useEffect } from 'react';
-import { CardGroup } from 'react-bootstrap';
+
+import { Col, Row} from 'react-bootstrap';
 
 import ItemThumb from './ItemThumb';
 
@@ -19,12 +20,13 @@ const Index = () => {
 
     return (
         <div>
-            <CardGroup>
+            <Row>
                 {clothes.map((clothing) => {
                     return <ItemThumb clothing={clothing}/>
                     }
                 )}
-            </CardGroup>
+            </Row>
+            
         </div>
     );
 }

@@ -3,6 +3,44 @@
 }
 
 main {
-    background-color: red;
-    height: 100dvh
+
+    height: 100dvh;
+}
+
+#bgimage {
+    /* background-color: red; */
+    height: 100dvh;
+    width: 100dvw;
+    position: absolute;
+    opacity: 0.4;
+    background-size: contain;
+}
+
+/* Navigation Links */
+.navlink {
+    transition: 250ms;
+    color: black;
+    text-decoration: none;
+}
+
+.navlink:hover {
+    color: #1e1e1e;
+    transition: 250ms;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+
+.font-tillana {
+    font-family: Tillana;
+}
+.font-timmana {}
+.font-trirong {}
+.font-shadows-into-light {}
+.font-playfair-display {
+    font-family: Playfair Display, serif;
+    font-weight: bold;
 }
