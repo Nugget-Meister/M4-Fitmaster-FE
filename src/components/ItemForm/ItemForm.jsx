@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Form } from 'react-bootstrap';
-
+import { Form, Container } from 'react-bootstrap';
 
 const ItemForm = ({id}) => {
     const template = {
@@ -29,8 +28,16 @@ const ItemForm = ({id}) => {
     }
 
     return (
-        <div>
-            
+        <div className='ItemForm'>
+            <Container 
+                className='bg-primary'
+            >
+                bingbong
+            </Container>
+            <Form
+                className=''>
+
+            </Form>
         </div>
     );
 }

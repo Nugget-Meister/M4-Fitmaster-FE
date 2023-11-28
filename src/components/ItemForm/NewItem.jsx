@@ -3,7 +3,7 @@ import ItemForm from './ItemForm';
 
 const NewItem = () => {
     return (
-        <div>
+        <div className='NewItem'>
             <ItemForm />
         </div>
     );

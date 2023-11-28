@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import Container from 'react-bootstrap';
 const NavBar = () => {
     return (
-        <Navbar className=''>
+        <Navbar className='NavBar'>
             <Container>
                 <Navbar.Brand className=''>
                     <Container className='border-end border-black border-2'>
