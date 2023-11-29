@@ -89,6 +89,10 @@ main {
 }
 .font-playfair-display {
     font-family: Playfair Display, serif;
+}
+
+.font-playfair-display-bold {
+    font-family: Playfair Display, serif;
     font-weight: bold;
 }
 
@@ -103,13 +107,32 @@ main {
 
 }
 
+.button-custom {
+    border: none;
+    border-radius: 0px;
+    color: black
+}
+
+.button-custom:hover{
+    transition: 250ms;
+    background-color: white;
+    color: black;
+    padding-right: 50px;
+}
+
 /* Custom Background w/ opacity */
 
 .bg-icy-blue {
     background-color: var(--icy-blue);
 }
 .bg-danger-red {
-    background-color: var(--danger-red);
+    background-color: var(--danger-red); 
+    
+}
+
+.bg-warning-yellow {
+    background-color: var(--warning-yellow);
+    border: none;
 }
 
 .bg-shelf-brown {

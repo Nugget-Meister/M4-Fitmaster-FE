@@ -298,13 +298,13 @@ const ItemForm = ({id}) => {
                                 className='d-flex justify-content-end align-items-end py-3 px-3'
                             >
                                 <Button
-                                    className='d-flex w-25 mx-3 justify-content-end'
+                                    className='d-flex w-25 mx-3 justify-content-end bg-warning-yellow font-shadows-into-light fs-4 button-custom'
                                     type='reset'  
                                     onClick={handleReset}  
                                 >Reset
                                 </Button>
                                 <Button
-                                    className='d-flex w-25 justify-content-end'
+                                    className='d-flex w-25 justify-content-end bg-danger-red font-shadows-into-light fs-4 button-custom'
                                     type="submit"
                                 >Submit</Button>
                             </Row>
