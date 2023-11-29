@@ -141,5 +141,13 @@ main {
     border-color: white;
 }
 
+.Reccommend {
+    background-color: var(--icy-blue);
+    max-width: 500px;
+    padding: 20px;
+}
 
+.only-mobile {
+    display: none
+}
 

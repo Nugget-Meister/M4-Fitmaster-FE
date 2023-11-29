@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 const Reccomend = ({clothes}) => {
+
+    clothes = clothes || []
+
     const min = 65
     const max = 85
 
@@ -28,7 +31,7 @@ const Reccomend = ({clothes}) => {
 
     return (
         <div 
-            className='Reccommend d-flex'
+            className='Reccommend d-flex justify-content-center'
         >
             Temp Range: {thermal.min} - {thermal.max}F
         </div>

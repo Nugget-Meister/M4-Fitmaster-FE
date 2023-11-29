@@ -49,4 +49,12 @@
     .form-floating label {
         display: none;
     }
+
+    .only-mobile {
+        display: block;
+    }
+
+    .only-desktop {
+        display: none !important;
+    }
 }
