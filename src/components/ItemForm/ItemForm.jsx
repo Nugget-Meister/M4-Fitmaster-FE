@@ -92,7 +92,6 @@ const ItemForm = ({id}) => {
             })
             .then(data => {
                 setItem({...data})
-                template = data
             })
         }
     }, [id])
@@ -146,7 +145,7 @@ const ItemForm = ({id}) => {
         }
 
     const handleReset = () => {
-        setItem = { ...template}
+        setItem({ ...template})
     }
 
     return (
@@ -301,7 +300,7 @@ const ItemForm = ({id}) => {
                                     className='d-flex w-25 mx-3 justify-content-end bg-warning-yellow font-shadows-into-light fs-4 button-custom'
                                     type='reset'  
                                     onClick={handleReset}  
-                                >Reset
+                                >Clear
                                 </Button>
                                 <Button
                                     className='d-flex w-25 justify-content-end bg-danger-red font-shadows-into-light fs-4 button-custom'
