@@ -19,7 +19,7 @@ const createClothing = (input) => {
         headers: {'Content-Type': "application/json" }
     };
 
-    return fetch(`${URL}/clothes`, options)
+    return fetch(URL, options)
     .then(res => res.json())
     .catch(err => console.error(err))
 }
