@@ -1,11 +1,16 @@
 import React from 'react';
 import { Card, Button, Container} from 'react-bootstrap';
 import ThumbTitle from './thumbTitle';
+import { useNavigate } from 'react-router';
 
 const ItemThumb = ({clothing}) => {
-    console.log(clothing)
+    // console.log(clothing)
+    const navigate = useNavigate()
     return (
-        <div className='ItemThumb p-3'>
+        <div 
+            className='ItemThumb p-3'
+            onClick={() => navigate(`/clothes/${clothing.id}`)}
+            >
             <ThumbTitle text={clothing.name}/>
             <Card 
                 // className='ItemThumb'
