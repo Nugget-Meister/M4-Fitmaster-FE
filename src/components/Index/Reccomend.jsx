@@ -31,7 +31,7 @@ const Reccomend = ({clothes}) => {
 
     return (
         <div 
-            className='Reccommend d-flex justify-content-center'
+            className='Reccommend d-flex justify-content-center font-timmana fs-2'
         >
             Temp Range: {thermal.min} - {thermal.max}F
         </div>

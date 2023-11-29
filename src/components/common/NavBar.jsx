@@ -12,10 +12,10 @@ const NavBar = () => {
                     >
                     <Navbar.Brand className=''>
                         <Container className='border-end border-black border-2'>
-                            <span className='d-flex justify-content-end font-playfair-display fs-4'>
+                            <span className='d-flex justify-content-end font-playfair-display-bold fs-4'>
                                 Fitmaster 
                             </span>
-                            <span className='d-flex justify-content-end'>
+                            <span className='d-flex justify-content-end font-playfair-display'>
                                 Unleash your Fashion
                             </span>
                         </Container>
@@ -23,7 +23,7 @@ const NavBar = () => {
                 </Link>
                 <Navbar.Collapse className='justify-content-end'>
                     <Link 
-                        className='navlink m-2'
+                        className='navlink m-2 font-shadows-into-light fs-3'
                         to={'/clothes/new'}>
                         New Cloth
                     </Link>

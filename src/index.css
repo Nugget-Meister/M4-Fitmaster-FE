@@ -1,5 +1,6 @@
 :root {
  --danger-red: #ffac99;
+ --deep-red: #D4521A;
  --warning-yellow: #ecd3a4;
  --icy-blue: #b2f6ff;
  --artic-blue: #33b1c3;
@@ -9,7 +10,7 @@
 
 main {
     height: 100dvh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #bgimage {
@@ -67,6 +68,28 @@ main {
     border-radius: 50px 0px 0px 0px;
 }
 
+.Reccommend {
+    background-color: var(--icy-blue);
+    max-width: 500px;
+    padding: 20px;
+}
+
+/* Buttons */
+
+.button-custom {
+    border: none;
+    border-radius: 0px;
+    color: black
+}
+
+.button-custom:hover{
+    transition: 250ms;
+    background-color: white;
+    color: black;
+    padding-right: 50px;
+}
+
+
  /* Fonts */
 .font-tillana {
     font-family: Tillana, serif;
@@ -82,14 +105,54 @@ main {
 }
 .font-playfair-display {
     font-family: Playfair Display, serif;
+}
+
+.font-playfair-display-bold {
+    font-family: Playfair Display, serif;
     font-weight: bold;
+}
+
+
+
+
+/* Font Color */
+
+.fc-deep-red {
+    color: var(--deep-red) !important;
+}
+
+.fc-artic-blue {
+    color: var(--artic-blue);
+
 }
 
 /* Custom Background w/ opacity */
 
+.bg-good-green {
+    background-color: var(--good-green);
+}
+
+.bg-icy-blue {
+    background-color: var(--icy-blue);
+}
+.bg-danger-red {
+    background-color: var(--danger-red); 
+    
+}
+
+.bg-warning-yellow {
+    background-color: var(--warning-yellow);
+    border: none;
+}
+
 .bg-shelf-brown {
     background-color: rgba(188,104,57,30%);
     box-shadow: rgba(188,104,57,30%) 0rem 3rem;
+}
+
+.bg-shelf-brown-dark {
+    background-color: rgba(188,104,57,60%);
+    box-shadow: rgba(188,104,57,60%) 0rem 3rem;
 }
 
 .bg-shelf-gray {
@@ -141,13 +204,7 @@ main {
     border-color: white;
 }
 
-.Reccommend {
-    background-color: var(--icy-blue);
-    max-width: 500px;
-    padding: 20px;
-}
-
 .only-mobile {
-    display: none
+    display: none !important
 }
 

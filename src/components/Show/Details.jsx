@@ -97,7 +97,7 @@ const Details = ({data}) => {
         <>
             {deleteModal}
             {succeedModal}
-            <Container className='Details bg-ltwhite h-600 d-flex justify-content-end'>
+            <Container className='Details bg-ltwhite h-600 d-flex justify-content-end font'>
                 <div 
                     className='mx-4 mt-5 border-end border-2 border-black flex-fill'
                 >
@@ -105,23 +105,30 @@ const Details = ({data}) => {
                         className='border-bottom border-black border-2 p-3'
                     >
                         <Row>
-                            <Col className='d-flex justify-content-end'>
-                                {data.iscomfortable ? "Comfortable " : "Uncomfortable "}
+                            <Col className='d-flex justify-content-end font-trirong fs-4'>
+                                {data.iscomfortable ? (
+                                    <span className='px-3 bg-good-green rounded-pill mx-2'>
+                                        {`Comfortable`}
+                                    </span> ): 
+                                    <span className='px-3 bg-danger-red rounded-pill mx-2'>
+                                        {`Uncomfortable`}
+                                    </span>
+                                    }
                                 {data.material}
                             </Col>
                         </Row>
                         <Row>
-                            <Col className='d-flex justify-content-end'>
+                            <Col className='d-flex justify-content-end font-trirong fs-1'>
                                 {data.name}
                             </Col>
                         </Row>
                     </div>
-                    <div className='border-bottom border-black border-2 p-3'>
+                    <div className='border-bottom border-black border-2 p-3 font-timmana fs-3'>
                         <Row>
-                            <Col className='d-flex justify-content-end'>{data.heat} Insulation</Col>
+                            <Col className='d-flex justify-content-end fc-deep-red'>{data.heat} Insulation</Col>
                         </Row>
                         <Row>
-                            <Col className='d-flex justify-content-end'>{data.cold} Cooling</Col>
+                            <Col className='d-flex justify-content-end fc-artic-blue'>{data.cold} Cooling</Col>
                         </Row>
                         <Row>
                             <Col className='d-flex justify-content-end'>{data.category}</Col>
@@ -131,7 +138,7 @@ const Details = ({data}) => {
                         <Row className='d-flex my-4'>
                             <Col>
                                 <Button
-                                    className='d-flex ps-5 mx-2'
+                                    className='d-flex ps-5 mx-2 button-custom bg-danger-red font-shadows-into-light fs-4'
                                     onClick={() => showModal('delete')}
                                 >
                                     Delete
@@ -139,7 +146,7 @@ const Details = ({data}) => {
                             </Col>
                             <Col>
                                 <Button 
-                                    className='d-flex me-3'
+                                    className='d-flex me-3 button-custom bg-warning-yellow font-shadows-into-light fs-4'
                                     onClick={() => navigate(`/clothes/${data.id}/edit`)}
                                 >
                                     Edit

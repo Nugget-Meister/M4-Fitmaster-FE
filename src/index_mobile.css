@@ -51,10 +51,14 @@
     }
 
     .only-mobile {
-        display: block;
+        display: block !important;
     }
 
     .only-desktop {
         display: none !important;
+    }
+
+    .mobile-font {
+        font-size: 18pt !important;
     }
 }
