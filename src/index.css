@@ -52,7 +52,6 @@ main {
 .ItemThumb:hover {
     transform: 250ms;
     width: 16rem;
-    color: ;
 }
 
 /* Subcomponents */
@@ -64,9 +63,11 @@ main {
 
  /* Fonts */
 .font-tillana {
-    font-family: Tillana;
+    font-family: Tillana, serif;
 }
-.font-timmana {}
+.font-timmana {
+    font-family: Timmana, serif;
+}
 .font-trirong {}
 .font-shadows-into-light {}
 .font-playfair-display {
@@ -74,11 +75,36 @@ main {
     font-weight: bold;
 }
 
+/* Custom Background w/ opacity */
+
+.bg-shelf-brown {
+    background-color: rgba(188,104,57,30%);
+    box-shadow: rgba(188,104,57,30%) 0rem 3rem;
+}
+
+.bg-shelf-gray {
+    background-color: rgba(245,245,245,50%);
+    box-shadow: rgba(245,245,245,50%) 0rem 3rem;
+}
+
+.bg-gray {
+    background-color: rgba(245,245,245,50%);
+}
+
+
+/* Custom heights  */
 
 .h-12rem {
     max-height: 12rem;
 }
 
+.h-600 {
+    height: 600px;
+}
+
+.hm-600 {
+    max-height: 600px;
+}
 .checkbox-big input{
     transition: 250ms;
     width: 20px; 
@@ -100,5 +126,6 @@ main {
     box-shadow: none;
     border-color: white;
 }
+
 
 

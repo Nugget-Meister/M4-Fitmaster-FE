@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Form, Container, Image, Col, Row, Button} from 'react-bootstrap';
 import fakeImage from '../../assets/huy-nguyen-YhP-E5YwOGE-unsplash.jpg'
 import { getSingleClothing } from '../../helpers/apicalls';
+import {FloatingLabel} from 'react-bootstrap';
 
 
 const ItemForm = ({id}) => {
@@ -20,11 +21,11 @@ const ItemForm = ({id}) => {
     
     useEffect(() => {
         if(id) {
-            console.log(id);
+            // console.log(id);
             getSingleClothing(id)
             .then(res => {
                 if(res.data.id){
-                    console.log(res.data)
+                    // console.log(res.data)
                     return res.data
                 }
             })
@@ -49,7 +50,7 @@ const ItemForm = ({id}) => {
         })
     }
     const handleSubmit = (e) => {
-        e.preventDetault()
+        e.preventDefault()
         console.log(item)
     }
 
@@ -59,19 +60,31 @@ const ItemForm = ({id}) => {
 
     return (
         <div className='ItemForm'>
-            <Row>
-                <Col>
-                    <Container className='bg-primary'>
-                        <Image src={fakeImage} rounded fluid/>
+            <Row className='d-flex align-items-center'>
+                <Col className=''>
+                    <Container 
+                        className='text-center w-50 ThumbTitle p-2'
+                    >
+                        {item.name}
+                    </Container>
+                    <Container 
+                        className='hm-600 d-flex justify-content-center overflow-hidden bg-shelf-brown'>
+                        <Image 
+                            className='h-600'
+                            src={item.imageurl} rounded fluid/>
                     </Container>
                 </Col>
-                <Col>
-                    <Form className=''>
+                <Col
+                    className='mx-2'
+                >
+                    <Form 
+                        className='mx-4'
+                        onSubmit={handleSubmit}>
                         <Row>
                             <Form.Group as={Col}>
                                 <Row>
                                     <Col>
-                                        <Form.Label className=''> 
+                                        <Form.Label className='font-timmana fs-4'> 
                                             Name 
                                         </Form.Label>
                                     </Col>
@@ -83,12 +96,13 @@ const ItemForm = ({id}) => {
                                             className='checkbox-big d-flex'
                                             id='iscomfortable'
                                             checked={item.iscomfortable}
-                                            onClick={handleTrueFalse}
+                                            onChange={handleTrueFalse}
                                         />
                                     </Col>
                                     
                                 </Row>
                                 <Form.Control 
+                                    className='text-center'
                                     id='name'
                                     value={item.name}
                                     onChange={handleChange}
@@ -99,68 +113,95 @@ const ItemForm = ({id}) => {
                         </Row>
                         <Row>
                             <Form.Group as={Col}>
-                                <Form.Label className=''> '' </Form.Label>
-                                <Form.Control 
-                                    id=''
-                                    value={''}
-                                    onChange={handleChange}
-                                    placeholder='Bingbong'
-                                    required
-                                />
+                                <Form.Label className=''>Insulation</Form.Label>
+                                <FloatingLabel label="Protection from heat in degrees">
+                                    <Form.Control 
+                                        className='text-center'
+                                        id='heat'
+                                        type='number'
+                                        value={item.heat}
+                                        onChange={handleChange}
+                                        placeholder='Number'
+                                        required
+                                        />
+                                </FloatingLabel>
                             </Form.Group>
                             <Form.Group as={Col}>
-                                <Form.Label className=''> '' </Form.Label>
-                                <Form.Control 
-                                    id=''
-                                    value={''}
-                                    onChange={handleChange}
-                                    placeholder='Bingbong'
-                                    required
-                                />
+                                <Form.Label className=''>Cooling</Form.Label>
+                                <FloatingLabel label='Protection from the cold in degrees'>
+                                    <Form.Control
+                                        className='text-center' 
+                                        id='cold'
+                                        value={item.cold}
+                                        type='number'
+                                        onChange={handleChange}
+                                        placeholder='Number'
+                                        required
+                                        />
+                                </FloatingLabel>
                             </Form.Group>
                         </Row>
                         <Row>
                             <Form.Group as={Col}>
-                                <Form.Label className=''> '' </Form.Label>
-                                <Form.Control 
-                                    id=''
-                                    value={''}
+                                <Form.Label className=''>Category</Form.Label>
+                                <Form.Select
+                                    id='category'
+                                    value={item.category}
                                     onChange={handleChange}
-                                    placeholder='Bingbong'
+                                    placeholder=''
                                     required
-                                />
+                                >
+                                    <option value="Face">Face</option>
+                                    <option value="Neck">Neck</option>
+                                    <option value="Torso">Torso</option>
+                                    <option value="Arms">Arms</option>
+                                    <option value="Hands">Hands</option>
+                                    <option value="Legs">Legs</option>
+                                    <option value="Feet">Feet</option>
+                                </Form.Select>
                             </Form.Group>
                             <Form.Group as={Col}>
-                                <Form.Label className=''> '' </Form.Label>
-                                <Form.Control 
-                                    id=''
-                                    value={''}
+                                <Form.Label className=''>Material</Form.Label>
+                                <Form.Select 
+                                    id='material'
+                                    value={item.material}
                                     onChange={handleChange}
                                     placeholder='Bingbong'
                                     required
-                                />
+                                >
+                                    <option value="Canvas">Canvas</option>
+                                    <option value="Cotton">Cotton</option>
+                                    <option value="Denim">Denim</option>
+                                    <option value="Hemp">Hemp</option>
+                                    <option value="Leather">Leather</option>
+                                    <option value="Linen">Linen</option>
+                                    <option value="Lycra">Lycra</option>
+                                    <option value="Polyester">Polyester</option>
+                                    <option value="Silk">Silk</option>
+                                    <option value="Velvet">Velvet</option>
+                                    <option value="Wool">Wool</option>
+                                </Form.Select>
                             </Form.Group>
                         </Row>
                         <Row>                  
                             <Form.Group as={Col}>
                                 <Form.Label className='d-flex'> 
-                                    Name 
+                                    Image Source 
                                 </Form.Label>
-                                
                                 <Form.Control 
-                                    id=''
-                                    value={''}
+                                    id='imageurl'
+                                    value={item.imageurl}
                                     onChange={handleChange}
-                                    placeholder='Bingbong'
+                                    placeholder=''
                                     required
                                 />
                             </Form.Group>
                         </Row>
                         <Row
-                            className='d-flex justify-content-end align-items-end py-3'
+                            className='d-flex justify-content-end align-items-end py-3 px-3'
                         >
                             <Button
-                                className='d-flex w-25 justify-content-end'
+                                className='d-flex w-25 mx-3 justify-content-end'
                                 type='reset'  
                                 onClick={handleReset}  
                             >Reset
