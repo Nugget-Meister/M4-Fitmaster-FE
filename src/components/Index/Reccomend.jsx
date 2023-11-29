@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 const Reccomend = ({clothes}) => {
 
@@ -10,6 +11,8 @@ const Reccomend = ({clothes}) => {
     const [thermal, setThermal] = useState({
         min: 0,
         max: 0,
+        insulation: 0,
+        cooling: 0
     })
 
     // console.log(clothes)
@@ -24,7 +27,9 @@ const Reccomend = ({clothes}) => {
             console.log(insulation, cooling)
             setThermal({
                 min: min - insulation,
-                max: max + cooling
+                max: max + cooling,
+                insulation: [insulation],
+                cooling: [cooling]
             })
     },[clothes])
 
@@ -33,7 +38,29 @@ const Reccomend = ({clothes}) => {
         <div 
             className='Reccommend d-flex justify-content-center font-timmana fs-2'
         >
-            Temp Range: {thermal.min} - {thermal.max}F
+            <div>       
+                <Row>
+                    <Col className='d-flex justify-content-center'>
+                        Temp Range: {thermal.min} - {thermal.max} F
+                    </Col>
+                </Row>
+                <Row className='d-flex'>
+                    <Col className='d-flex justify-content-end'>
+                        <Col className='fs-4 d-flex justify-content-start border-end '>
+                            Insulation: 
+                            <span className='fc-deep-red px-2'>
+                                {thermal.insulation}
+                            </span>
+                        </Col>
+                        <Col className='fs-4 d-flex justify-content-end'>
+                            Cooling: 
+                            <span className='fc-artic-blue px-2'>
+                                {thermal.cooling} 
+                            </span>
+                            </Col>
+                    </Col>
+                </Row>
+            </div>
         </div>
     );
 }
