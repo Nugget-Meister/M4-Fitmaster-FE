@@ -36,8 +36,8 @@ const Show = () => {
                     </Container>
                 </Col>
                 <Col
-                    className='d-flex'
-                    >
+                    className='d-flex align-items-center justify-content-end'
+                >
                      <Details data={clothing}/>
                 </Col>
 
