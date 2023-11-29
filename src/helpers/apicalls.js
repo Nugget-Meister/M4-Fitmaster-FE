@@ -42,6 +42,7 @@ const deleteClothing = (id) => {
     };
 
     return fetch(`${URL}/${id}`, options)
+    .then(res => res.json())
 }
 
 export {

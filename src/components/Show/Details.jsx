@@ -41,17 +41,18 @@ const Details = ({data}) => {
     
     const handleDelete = (id) => {
         // console.log(id)
-        showModal('succeed')
         // hideModal('delete')
-        // deleteClothing(id)
-        // .then(res => {
-        //     if(res.data.id) {
-        //         showModal('succeed')
-        //     }
-        // })
-        // .catch(err => {
-        //     console.error(err)
-        // })
+        // showModal('succeed')
+        deleteClothing(id)
+        .then(res => {
+            console.log(res)
+            if(res.data.id) {
+                showModal('succeed')
+            }
+        })
+        .catch(err => {
+            console.error(err)
+        })
     }
 
 
