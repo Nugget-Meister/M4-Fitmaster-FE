@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Col, Row, Container} from 'react-bootstrap';
 
 import ItemThumb from './ItemThumb';
+import Reccomend from './Reccomend';
 
 const Index = () => {
     
@@ -27,6 +28,9 @@ const Index = () => {
                     return <ItemThumb clothing={clothing}/>
                     }
                 )}
+            </Row>
+            <Row>
+                <Reccomend clothes={clothes}/>
             </Row>
             
         </div>
