@@ -1,5 +1,5 @@
 # Fitmaster
-###### Powered by React Bootstrap, Vite, & Postgres for the back end.
+###### Powered by React Bootstrap, Vite, Animate.css & Postgres for the back end.
 
 - [Deployed Link](https://startling-douhua-766f69.netlify.app/)
 - [Link to Back-End](https://github.com/Nugget-Meister/M4-Fitmaster-BE)
