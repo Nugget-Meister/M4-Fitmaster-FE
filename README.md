@@ -1,8 +1,14 @@
-# React + Vite
+# Fitmaster
+###### Powered by React Bootstrap, Vite, & Postgres for the back end.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [Deployed Link](https://startling-douhua-766f69.netlify.app/)
+- [Link to Back-End](https://github.com/Nugget-Meister/M4-Fitmaster-BE)
 
-Currently, two official plugins are available:
+## Welcome
+Welcome to fitmaster! The outfit designing tool. This tool allows you to add and modify articles of clothing to you person to simulate what your potential protection from the elements may be. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##### Results may vary
+
+## How to Use
+
+1. Upon opening the home page you will be greeted with
