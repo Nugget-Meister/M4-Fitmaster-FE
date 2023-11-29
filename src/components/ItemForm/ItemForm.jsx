@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Form, Container, Image, Col, Row, Button} from 'react-bootstrap';
-import { createClothing, getSingleClothing } from '../../helpers/apicalls';
+import { createClothing, getSingleClothing, updateClothing } from '../../helpers/apicalls';
 import {FloatingLabel} from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import { Modal } from 'react-bootstrap';
@@ -10,10 +10,10 @@ import { Modal } from 'react-bootstrap';
 const ItemForm = ({id}) => {
     let template = {
         name: '',
-        category: '',
+        category: 'Face',
         heat: 0,
         cold: 0,
-        material: '',
+        material: 'Canvas',
         iscomfortable: false,
         imageurl: ''
     }
@@ -35,12 +35,14 @@ const ItemForm = ({id}) => {
         })
     }
 
+
+
     const successModal = (
         <Modal show={showModal.success} onHide={()=> navigate('/')}>
             <Modal.Header>
-                <Modal.Title>Created {item.name}</Modal.Title>
+                <Modal.Title>Created/Updated {item.name}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Successfully created with an id of {item.id}</Modal.Body>
+            <Modal.Body>Received confirmation with an id of {item.id}</Modal.Body>
             <Modal.Footer>
                 <Button
                     onClick={() => navigate(`/clothes/${item.id}`)}
@@ -78,8 +80,6 @@ const ItemForm = ({id}) => {
 
 
 
-
-
     useEffect(() => {
         if(id) {
             // console.log(id);
@@ -113,20 +113,37 @@ const ItemForm = ({id}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createClothing(item)
-        .then(res => {
-            if(res.data.id) {
-                setItem({...res.data})
-                toggleModal('success', true);
-            } else {
+
+        if(item.id) {
+            updateClothing(item)
+            .then(res => {
+                if(res.data.id) {
+                    setItem({...res.data})
+                    toggleModal('success', true);
+                } else {
+                    toggleModal('failed', true);
+                }
+            })
+            .catch(err => {
+                console.error(err);
                 toggleModal('failed', true);
-            }
-        })
-        .catch(err => {
-            console.error(err);
-            toggleModal('failed', true);
-        })
-    }
+            })
+        } else {
+            createClothing(item)
+            .then(res => {
+                if(res.data.id) {
+                    setItem({...res.data})
+                    toggleModal('success', true);
+                } else {
+                    toggleModal('failed', true);
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                toggleModal('failed', true);
+            })
+        }
+        }
 
     const handleReset = () => {
         setItem = { ...template}
@@ -137,22 +154,22 @@ const ItemForm = ({id}) => {
             {successModal}
             {failedModal}
             <div className='ItemForm'>
-                <Row className='d-flex align-items-center'>
-                    <Col className=''>
+                <Row className='d-flex align-items-center row-mobile'>
+                    <Col >
                         <Container 
                             className='text-center w-50 ThumbTitle p-2'
                         >
                             {item.name}
                         </Container>
                         <Container 
-                            className='hm-600 d-flex justify-content-center overflow-hidden bg-shelf-brown'>
+                            className='hm-600 d-flex align-items-start justify-content-center overflow-hidden bg-shelf-brown flex-fill'>
                             <Image 
-                                className='h-600'
+                                className='h-600 img-mobile'
                                 src={item.imageurl} rounded fluid/>
                         </Container>
                     </Col>
                     <Col
-                        className='mx-2'
+                        // className='mx-2'
                     >
                         <Form 
                             className='mx-4'

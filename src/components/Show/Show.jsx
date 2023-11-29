@@ -25,13 +25,13 @@ const Show = () => {
                 className=''>
                 <Col>
                     <Container className='text-center ThumbTitle p-2 bg-gray'>
-                        <div>{clothing.imageurl}</div>
+                        <div className='p-2'>{clothing.imageurl}</div>
                     </Container>
                     <Container as={Col}
                         className='hm-600 d-flex justify-content-center overflow-hidden bg-shelf-gray'
                     >
                         <Image 
-                            className='h-600'
+                            className='h-600 img-mobile' 
                             src={clothing.imageurl || null} rounded fluid/>
                     </Container>
                 </Col>

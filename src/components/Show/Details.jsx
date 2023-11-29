@@ -36,16 +36,13 @@ const Details = ({data}) => {
             ...toggleModal,
             [key]: false
         })
-        console.log(toggleModal)
     }
     
     const handleDelete = (id) => {
         // console.log(id)
-        // hideModal('delete')
-        // showModal('succeed')
         deleteClothing(id)
         .then(res => {
-            console.log(res)
+            // console.log(res)
             if(res.data.id) {
                 showModal('succeed')
             }

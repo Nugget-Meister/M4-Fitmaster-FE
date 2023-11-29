@@ -58,6 +58,7 @@ main {
 .ThumbTitle {
     background-color: #f0f0f0;
     border-radius: 10px 10px 0px 0px;
+    overflow-wrap: break-word;
 }
 
 .Details {
@@ -72,8 +73,12 @@ main {
 .font-timmana {
     font-family: Timmana, serif;
 }
-.font-trirong {}
-.font-shadows-into-light {}
+.font-trirong {
+    font-family: Trirong, sans-serif;
+}
+.font-shadows-into-light {
+    font-family: Shadows Into Light, serif;
+}
 .font-playfair-display {
     font-family: Playfair Display, serif;
     font-weight: bold;

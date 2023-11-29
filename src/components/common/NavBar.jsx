@@ -27,11 +27,11 @@ const NavBar = () => {
                         to={'/clothes/new'}>
                         New Cloth
                     </Link>
-                    <Link 
+                    {/* <Link 
                         className='navlink m-2'
                         to={'/outfits'}>
                         Outfits
-                    </Link>
+                    </Link> */}
                 </Navbar.Collapse>
             </Container>
         </Navbar>
