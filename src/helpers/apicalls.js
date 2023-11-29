@@ -45,6 +45,7 @@ const deleteClothing = (id) => {
     .then(res => res.json())
 }
 
+
 export {
     getClothes,
     getSingleClothing,

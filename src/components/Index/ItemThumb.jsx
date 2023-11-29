@@ -8,6 +8,7 @@ const ItemThumb = ({clothing}) => {
     const navigate = useNavigate()
     return (
         <div 
+            key={clothing.id}
             className='ItemThumb p-3'
             onClick={() => navigate(`/clothes/${clothing.id}`)}
             >

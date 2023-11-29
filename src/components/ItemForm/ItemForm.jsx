@@ -208,7 +208,7 @@ const ItemForm = ({id}) => {
                             <Row>
                                 <Form.Group as={Col}>
                                     <Form.Label className=''>Insulation</Form.Label>
-                                    <FloatingLabel label="Protection from heat in degrees">
+                                    <FloatingLabel label="Protection from cold in degrees">
                                         <Form.Control 
                                             className='text-center'
                                             id='heat'
@@ -222,7 +222,7 @@ const ItemForm = ({id}) => {
                                 </Form.Group>
                                 <Form.Group as={Col}>
                                     <Form.Label className=''>Cooling</Form.Label>
-                                    <FloatingLabel label='Protection from the cold in degrees'>
+                                    <FloatingLabel label='Protection from the heat in degrees'>
                                         <Form.Control
                                             className='text-center' 
                                             id='cold'

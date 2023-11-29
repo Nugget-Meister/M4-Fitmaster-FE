@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Col, Row, Container} from 'react-bootstrap';
 
 import ItemThumb from './ItemThumb';
+import Reccomend from './Reccomend';
 
 const Index = () => {
     
@@ -20,6 +21,9 @@ const Index = () => {
 
     return (
         <div className='z-2 position-relative'>
+            <div className='only-mobile'>
+                <Reccomend clothes={clothes}/>
+            </div>
             <Row 
                 className='d-flex justify-content-center m-5'
             >
@@ -27,6 +31,9 @@ const Index = () => {
                     return <ItemThumb clothing={clothing}/>
                     }
                 )}
+            </Row>
+            <Row className='d-flex justify-content-center only-desktop'>
+                <Reccomend clothes={clothes}/>
             </Row>
             
         </div>
