@@ -165,14 +165,14 @@ const ItemForm = ({id}) => {
                             className='hm-600 d-flex align-items-start justify-content-center overflow-hidden bg-shelf-brown flex-fill'>
                             <Image 
                                 className='h-600 img-mobile'
-                                src={item.imageurl} rounded fluid/>
+                                src={item.imageurl} rounded fluid />
                         </Container>
                     </Col>
                     <Col
                         // className='mx-2'
                     >
                         <Form 
-                            className='mx-4'
+                            className=' bg-shelf-brown-dark p-4'
                             onSubmit={handleSubmit}>
                             <Row>
                                 <Form.Group as={Col}>
@@ -183,7 +183,7 @@ const ItemForm = ({id}) => {
                                             </Form.Label>
                                         </Col>
                                         <Col className='d-flex'>
-                                            <Form.Label className='px-4'>
+                                            <Form.Label className='font-timmana fs-4 pe-4'>
                                                 Comfy?
                                             </Form.Label>
                                             <Form.Check
@@ -196,7 +196,7 @@ const ItemForm = ({id}) => {
                                         
                                     </Row>
                                     <Form.Control 
-                                        className='text-center'
+                                        className='text-center font-tillana fs-5'
                                         id='name'
                                         value={item.name}
                                         onChange={handleChange}
@@ -205,12 +205,12 @@ const ItemForm = ({id}) => {
                                     />
                                 </Form.Group>
                             </Row>
-                            <Row>
+                            <Row className='py-3'>
                                 <Form.Group as={Col}>
-                                    <Form.Label className=''>Insulation</Form.Label>
+                                    <Form.Label className='font-timmana fs-4'>Insulation</Form.Label>
                                     <FloatingLabel label="Protection from cold in degrees">
                                         <Form.Control 
-                                            className='text-center'
+                                            className='text-center font-tillana fs-5'
                                             id='heat'
                                             type='number'
                                             value={item.heat}
@@ -220,11 +220,11 @@ const ItemForm = ({id}) => {
                                             />
                                     </FloatingLabel>
                                 </Form.Group>
-                                <Form.Group as={Col}>
-                                    <Form.Label className=''>Cooling</Form.Label>
+                                <Form.Group as={Col} className=''>
+                                    <Form.Label className='font-timmana fs-4'>Cooling</Form.Label>
                                     <FloatingLabel label='Protection from the heat in degrees'>
                                         <Form.Control
-                                            className='text-center' 
+                                            className='text-center font-tillana fs-5' 
                                             id='cold'
                                             value={item.cold}
                                             type='number'
@@ -237,8 +237,9 @@ const ItemForm = ({id}) => {
                             </Row>
                             <Row>
                                 <Form.Group as={Col}>
-                                    <Form.Label className=''>Category</Form.Label>
+                                    <Form.Label className='font-timmana fs-4'>Category</Form.Label>
                                     <Form.Select
+                                        className='text-center font-tillana fs-5'
                                         id='category'
                                         value={item.category}
                                         onChange={handleChange}
@@ -255,9 +256,10 @@ const ItemForm = ({id}) => {
                                     </Form.Select>
                                 </Form.Group>
                                 <Form.Group as={Col}>
-                                    <Form.Label className=''>Material</Form.Label>
+                                    <Form.Label className='font-timmana fs-4'>Material</Form.Label>
                                     <Form.Select 
                                         id='material'
+                                        className='text-center font-tillana fs-5'
                                         value={item.material}
                                         onChange={handleChange}
                                         placeholder='Bingbong'
@@ -277,13 +279,14 @@ const ItemForm = ({id}) => {
                                     </Form.Select>
                                 </Form.Group>
                             </Row>
-                            <Row>                  
+                            <Row className='pt-3'>                  
                                 <Form.Group as={Col}>
-                                    <Form.Label className='d-flex'> 
+                                    <Form.Label className='d-flex font-timmana fs-4'> 
                                         Image Source 
                                     </Form.Label>
                                     <Form.Control 
                                         id='imageurl'
+                                        className='text-center font-tillana fs-6'
                                         value={item.imageurl}
                                         onChange={handleChange}
                                         placeholder=''
