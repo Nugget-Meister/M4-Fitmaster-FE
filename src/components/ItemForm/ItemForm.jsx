@@ -8,6 +8,9 @@ import { Modal } from 'react-bootstrap';
 
 
 const ItemForm = ({id}) => {
+
+    const navigate = useNavigate()
+
     let template = {
         name: '',
         category: 'Face',
@@ -20,8 +23,6 @@ const ItemForm = ({id}) => {
 
     const [item, setItem] = useState({...template})
     
-    const navigate = useNavigate()
-
 
     const [ showModal, setShowModal] = useState({
        success: false,
@@ -34,8 +35,6 @@ const ItemForm = ({id}) => {
             [key]: value
         })
     }
-
-
 
     const successModal = (
         <Modal show={showModal.success} onHide={()=> navigate('/')}>
@@ -78,7 +77,7 @@ const ItemForm = ({id}) => {
         </Modal>
     )
 
-
+  
 
     useEffect(() => {
         if(id) {

@@ -6,12 +6,13 @@ import Index from './components/Index/Index'
 import NewItem from './components/ItemForm/NewItem'
 import EditItem from './components/ItemForm/EditItem'
 import Show from './components/Show/Show'
-import Outfits from './components/Outfits/Outfits'
+// import Outfits from './depreciated/Outfits/Outfits'
 
 import './index.css'
 import './index_mobile.css'
+import 'animate.css'
 import splashBG from './assets/clark-street-mercantile-P3pI6xzovu0-unsplash.jpg'
-// import Outfits from './components/Outfits/Outfits'
+
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
             'backgroundImage': `url(${splashBG})`,
           }}
           >
-            s
+            
           </div>
           <NavBar/>
           <Routes>
@@ -34,7 +35,7 @@ function App() {
             <Route path='/clothes/new' element={<NewItem/>}/>
             <Route path='/clothes/:id' element={<Show/>}/>
             <Route path='/clothes/:id/edit' element={<EditItem/>}/>
-            <Route path='/outfits/' element={<Outfits/>}/>
+            {/* <Route path='/outfits/' element={<Outfits/>}/> */}
           </Routes>
         </main>
       </Router>

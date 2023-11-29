@@ -11,7 +11,11 @@ const Show = () => {
 
     const [clothing, setClothing] = useState({})
     const [isLoading, setIsLoading] = useState(true)
+    const [startAnim, setStartAnim] = useState(false)
     const [isError, setIsError] = useState(false)
+
+
+
     
     const [showModal, setShowModal] = useState(false)
 
@@ -40,10 +44,12 @@ const Show = () => {
             .then(res => {
                 if(res.data.id) {
                     setClothing({...res.data})
-                    setIsLoading(false)
+                    setStartAnim(true)
+                    setTimeout(()=> {
+                        setIsLoading(false)
+                    }, "1000")
                 } else {
-                    setIsLoading(false)
-                    setIsError(true)
+                    setShowModal(true)
                 }
             })
             .catch(err => {
@@ -54,7 +60,7 @@ const Show = () => {
     })
     return (
         <div className='Show'>
-            {isLoading ? (<h1>Loading...</h1>): null}
+            {isLoading ? (<h1 className={`text-center animate__animated animate__bounceIn ${startAnim ? 'animate__bounceOut' : ''}`}>Loading...</h1>): null}
             {failedModal}
             <Row 
                 className=''>

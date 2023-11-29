@@ -19,12 +19,12 @@ const Reccomend = ({clothes}) => {
     useEffect(() => {
         let cooling = 0
         let insulation = 0
-        console.log(thermal)
+        // console.log(thermal)
             for(let cloth of clothes) {
                 cooling += Number(cloth.cold);
                 insulation += Number(cloth.heat)
             }
-            console.log(insulation, cooling)
+            // console.log(insulation, cooling)
             setThermal({
                 min: min - insulation,
                 max: max + cooling,
@@ -46,7 +46,7 @@ const Reccomend = ({clothes}) => {
                 </Row>
                 <Row className='d-flex'>
                     <Col className='d-flex justify-content-end'>
-                        <Col className='fs-4 d-flex justify-content-start border-end '>
+                        <Col className='fs-4 d-flex justify-content-start'>
                             Insulation: 
                             <span className='fc-deep-red px-2'>
                                 {thermal.insulation}

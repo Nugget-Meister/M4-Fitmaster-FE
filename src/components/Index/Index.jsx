@@ -10,17 +10,29 @@ import Reccomend from './Reccomend';
 const Index = () => {
     
     const [clothes, setClothes] = useState([])
-
+    const [isLoading, setLoading] = useState(true)
+    const [startAnim, setStartAnim]= useState(false)
     useEffect(() => {
         getClothes()
-        // .then(res => console.log(res.data))
-        .then(res => setClothes(res.data))
+        .then(res =>{
+            setClothes(res.data)
+            setStartAnim(true)
+            setTimeout(()=> {
+                setLoading(false)
+            },"1000")
+        })
         .catch(err => console.error(err))
+        console.log(isLoading)
     }, [])
+
+    
+
+
 
 
     return (
         <div className='z-2 position-relative'>
+            {isLoading ? (<h1 className={`text-center animate__animated animate__bounceIn ${startAnim ? 'animate__bounceOut' : ''}`}>Loading...</h1>): null}
             <div className='d-flex only-mobile'>
                 <Reccomend clothes={clothes}/>
             </div>
