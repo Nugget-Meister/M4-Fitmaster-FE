@@ -22,7 +22,7 @@ main {
     z-index: 1;
 }
 
-.NewItem, .NavBar{
+.NewItem, .EditItem, .Show, .NavBar{
     position: relative;
     z-index: 2;
 }
@@ -78,4 +78,27 @@ main {
 .h-12rem {
     max-height: 12rem;
 }
+
+.checkbox-big input{
+    transition: 250ms;
+    width: 20px; 
+    height: 20px;
+    /* border: 1px solid white; */
+}
+
+.checkbox-big input:checked[type=checkbox]{
+    transform: 250ms;
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border: medium solid white;
+    border-radius: 5px;
+    --bs-form-check-bg-image: none
+}
+
+.checkbox-big input:focus[type=checkbox] {
+    box-shadow: none;
+    border-color: white;
+}
+
 
