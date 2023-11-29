@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button, Container} from 'react-bootstrap';
-import ThumbTitle from './thumbTitle';
+import ThumbTitle from './ThumbTitle.jsx';
 import { useNavigate } from 'react-router';
 
 const ItemThumb = ({clothing}) => {
