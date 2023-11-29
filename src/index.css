@@ -10,7 +10,7 @@
 
 main {
     height: 100dvh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #bgimage {
@@ -74,6 +74,22 @@ main {
     padding: 20px;
 }
 
+/* Buttons */
+
+.button-custom {
+    border: none;
+    border-radius: 0px;
+    color: black
+}
+
+.button-custom:hover{
+    transition: 250ms;
+    background-color: white;
+    color: black;
+    padding-right: 50px;
+}
+
+
  /* Fonts */
 .font-tillana {
     font-family: Tillana, serif;
@@ -96,6 +112,9 @@ main {
     font-weight: bold;
 }
 
+
+
+
 /* Font Color */
 
 .fc-deep-red {
@@ -107,20 +126,11 @@ main {
 
 }
 
-.button-custom {
-    border: none;
-    border-radius: 0px;
-    color: black
-}
-
-.button-custom:hover{
-    transition: 250ms;
-    background-color: white;
-    color: black;
-    padding-right: 50px;
-}
-
 /* Custom Background w/ opacity */
+
+.bg-good-green {
+    background-color: var(--good-green);
+}
 
 .bg-icy-blue {
     background-color: var(--icy-blue);
@@ -195,6 +205,6 @@ main {
 }
 
 .only-mobile {
-    display: none
+    display: none !important
 }
 

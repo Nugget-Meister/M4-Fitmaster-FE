@@ -51,7 +51,7 @@
     }
 
     .only-mobile {
-        display: block;
+        display: block !important;
     }
 
     .only-desktop {

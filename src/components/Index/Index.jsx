@@ -21,9 +21,12 @@ const Index = () => {
 
     return (
         <div className='z-2 position-relative'>
-            <div className='only-mobile'>
+            <div className='d-flex only-mobile'>
                 <Reccomend clothes={clothes}/>
             </div>
+            <Row className='d-flex justify-content-center only-desktop'>
+                <Reccomend clothes={clothes}/>
+            </Row>
             <Row 
                 className='d-flex justify-content-center m-5'
             >
@@ -32,9 +35,7 @@ const Index = () => {
                     }
                 )}
             </Row>
-            <Row className='d-flex justify-content-center only-desktop'>
-                <Reccomend clothes={clothes}/>
-            </Row>
+            
             
         </div>
     );

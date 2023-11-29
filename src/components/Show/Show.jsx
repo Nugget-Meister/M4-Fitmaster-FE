@@ -11,9 +11,9 @@ const Show = () => {
 
     const [clothing, setClothing] = useState({})
     const [isLoading, setIsLoading] = useState(true)
-    const [isError, setIsError] = useState(true)
+    const [isError, setIsError] = useState(false)
     
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
 
     const failedModal = (
         <Modal show={showModal} onHide={()=> {setShowModal(false);}}>
@@ -33,18 +33,25 @@ const Show = () => {
         </Modal>
     )
 
-
+    
     useEffect(() => {
-        getSingleClothing(id)
-        .then(res => {
-            if(res.data.id) {
-                setClothing({...res.data})
-                setIsLoading(false)
-            }
-        })
-        .catch(err => console.error(err))
-    }, [])
-
+        setTimeout(()=> {
+            getSingleClothing(id)
+            .then(res => {
+                if(res.data.id) {
+                    setClothing({...res.data})
+                    setIsLoading(false)
+                } else {
+                    setIsLoading(false)
+                    setIsError(true)
+                }
+            })
+            .catch(err => {
+                console.error(err)
+                setIsError(true)
+            })
+        }, "1000")
+    })
     return (
         <div className='Show'>
             {isLoading ? (<h1>Loading...</h1>): null}

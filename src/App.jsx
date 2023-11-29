@@ -21,11 +21,7 @@ function App() {
   return (
     <>
       <Router>
-        <main style={{
-          // 'backgroundImage': `url(${splashBG})`,
-          // 'background-size': 'contain',
-          // 'opacity': '0.4'
-        }}>
+        <main>
           <div id='bgimage' style= {{
             'backgroundImage': `url(${splashBG})`,
           }}
