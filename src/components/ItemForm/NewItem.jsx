@@ -1,9 +1,10 @@
 import React from 'react';
+import ItemForm from './ItemForm';
 
 const NewItem = () => {
     return (
-        <div>
-            
+        <div className='NewItem'>
+            <ItemForm />
         </div>
     );
 }

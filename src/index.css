@@ -1,10 +1,15 @@
 :root {
-
+ --danger-red: #ffac99;
+ --warning-yellow: #ecd3a4;
+ --icy-blue: #b2f6ff;
+ --artic-blue: #33b1c3;
+ --good-green: #d0f0b0;
+ --shelf-brown: #644331;
 }
 
 main {
-
     height: 100dvh;
+    overflow: hidden;
 }
 
 #bgimage {
@@ -14,6 +19,12 @@ main {
     position: absolute;
     opacity: 0.4;
     background-size: contain;
+    z-index: 1;
+}
+
+.NewItem, .EditItem, .Show, .NavBar{
+    position: relative;
+    z-index: 2;
 }
 
 /* Navigation Links */
@@ -32,15 +43,102 @@ main {
 }
 
 
-
-
-.font-tillana {
-    font-family: Tillana;
+.ItemThumb {
+    transition: 250ms;
+    width: 15rem;
+    height: 20rem;
 }
-.font-timmana {}
-.font-trirong {}
-.font-shadows-into-light {}
+
+.ItemThumb:hover {
+    transform: 250ms;
+    width: 16rem;
+}
+
+/* Subcomponents */
+.ThumbTitle {
+    background-color: #f0f0f0;
+    border-radius: 10px 10px 0px 0px;
+    overflow-wrap: break-word;
+}
+
+.Details {
+    /* border: 2px solid black; */
+    border-radius: 50px 0px 0px 0px;
+}
+
+ /* Fonts */
+.font-tillana {
+    font-family: Tillana, serif;
+}
+.font-timmana {
+    font-family: Timmana, serif;
+}
+.font-trirong {
+    font-family: Trirong, sans-serif;
+}
+.font-shadows-into-light {
+    font-family: Shadows Into Light, serif;
+}
 .font-playfair-display {
     font-family: Playfair Display, serif;
     font-weight: bold;
 }
+
+/* Custom Background w/ opacity */
+
+.bg-shelf-brown {
+    background-color: rgba(188,104,57,30%);
+    box-shadow: rgba(188,104,57,30%) 0rem 3rem;
+}
+
+.bg-shelf-gray {
+    background-color: rgba(245,245,245,50%);
+    box-shadow: rgba(245,245,245,50%) 0rem 3rem;
+}
+
+.bg-gray {
+    background-color: rgba(245,245,245,50%);
+}
+
+.bg-ltwhite {
+    background-color: rgba(255,255,255, 90%);
+}
+
+
+/* Custom heights  */
+
+.h-12rem {
+    max-height: 12rem;
+}
+
+.h-600 {
+    height: 600px;
+}
+
+.hm-600 {
+    max-height: 600px;
+}
+.checkbox-big input{
+    transition: 250ms;
+    width: 20px; 
+    height: 20px;
+    /* border: 1px solid white; */
+}
+
+.checkbox-big input:checked[type=checkbox]{
+    transform: 250ms;
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border: medium solid white;
+    border-radius: 5px;
+    --bs-form-check-bg-image: none
+}
+
+.checkbox-big input:focus[type=checkbox] {
+    box-shadow: none;
+    border-color: white;
+}
+
+
+

@@ -1,0 +1,52 @@
+@media (max-width: 600px){
+    main {
+        overflow: auto;
+    }
+    
+    /* Item Form adjustments */
+
+    .ItemForm .row .col {
+        height: 40dvh;
+
+    }
+    
+    #bgimage {
+        /* height: 100dvh; */
+        /* width: 100dvw; */
+        position: absolute;
+        opacity: 0.4;
+        background-size:cover;
+    }
+
+    .img-mobile {
+        height: 45vh;
+        padding: 2vh;
+    }
+
+    .ThumbTitle div{
+        margin-left: 20px;
+        margin-right: 20px !important;
+    }
+
+    .Details {
+        height: 350px;
+    }
+
+    
+    .ItemForm .row .col {
+        height: auto
+    }
+    
+    .row-mobile {
+        display: inline !important;
+        align-items: start !important;
+    }
+
+    Form {
+        margin-top: 70px;
+    }
+
+    .form-floating label {
+        display: none;
+    }
+}
