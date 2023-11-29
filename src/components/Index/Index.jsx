@@ -2,7 +2,7 @@ import React from 'react';
 import { getClothes, getSingleClothing } from '../../helpers/apicalls';
 import { useState, useEffect } from 'react';
 
-import { Col, Row} from 'react-bootstrap';
+import { Col, Row, Container} from 'react-bootstrap';
 
 import ItemThumb from './ItemThumb';
 
@@ -19,8 +19,10 @@ const Index = () => {
 
 
     return (
-        <div>
-            <Row>
+        <div className='z-2 position-relative'>
+            <Row 
+                className='d-flex justify-content-center m-5'
+            >
                 {clothes.map((clothing) => {
                     return <ItemThumb clothing={clothing}/>
                     }

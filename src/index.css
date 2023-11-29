@@ -1,10 +1,15 @@
 :root {
-
+ --danger-red: #ffac99;
+ --warning-yellow: #ecd3a4;
+ --icy-blue: #b2f6ff;
+ --artic-blue: #33b1c3;
+ --good-green: #d0f0b0;
+ --shelf-brown: #644331;
 }
 
 main {
-
     height: 100dvh;
+    overflow: hidden;
 }
 
 #bgimage {
@@ -38,8 +43,26 @@ main {
 }
 
 
+.ItemThumb {
+    transition: 250ms;
+    width: 15rem;
+    height: 20rem;
+}
+
+.ItemThumb:hover {
+    transform: 250ms;
+    width: 16rem;
+    color: ;
+}
+
+/* Subcomponents */
+.ThumbTitle {
+    background-color: #f0f0f0;
+    border-radius: 10px 10px 0px 0px;
+}
 
 
+ /* Fonts */
 .font-tillana {
     font-family: Tillana;
 }
@@ -50,3 +73,9 @@ main {
     font-family: Playfair Display, serif;
     font-weight: bold;
 }
+
+
+.h-12rem {
+    max-height: 12rem;
+}
+

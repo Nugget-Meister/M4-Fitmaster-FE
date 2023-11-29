@@ -1,25 +1,31 @@
 import React from 'react';
-import { Card, Button} from 'react-bootstrap';
+import { Card, Button, Container} from 'react-bootstrap';
+import ThumbTitle from './thumbTitle';
 
 const ItemThumb = ({clothing}) => {
     console.log(clothing)
     return (
-       <Card >
-            <Card.Title>{clothing.name}</Card.Title>
-            <Card.Img 
-                variant='top' 
-                src={clothing.imageurl}
-                style={{
-                    width: '10rem', 
-                    overflow: 'hidden'
-                }}
-                />
-            <Card.Body>
-                <Button variant="warning">{clothing.heat}</Button>
-                <Button>{clothing.cold}</Button>
-            </Card.Body>
+        <div className='ItemThumb p-3'>
+            <ThumbTitle text={clothing.name}/>
+            <Card 
+                // className='ItemThumb'
+                >
+                <Container
+                    className='h-12rem overflow-y-hidden p-3'
+                    >
+                    <Card.Img 
+                        variant='top' 
+                        src={clothing.imageurl}
+                        className='overflow-y-hidden'
+                        />
+                </Container>
+                <Card.Body className='d-flex justify-content-between align-items-end'>
+                    <Button variant="warning">{clothing.heat}</Button>
+                    <Button>{clothing.cold}</Button>
+                </Card.Body>
 
-       </Card>
+            </Card>
+        </div>
     );
 }
 
